@@ -10,8 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@meteorrn/core": "^2.8.1",
+    "@meteorrn/minimongo": "^1.0.2",
+    "@react-native-async-storage/async-storage": "^2.0.0",
     "react": "18.3.1",
-    "react-native": "0.75.4"
+    "react-native": "0.75.4",
+    "react-native-meteor": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
