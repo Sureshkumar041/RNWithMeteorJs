@@ -102,11 +102,12 @@ function App(): React.JSX.Element {
   const insertDataApi = async () => {
     try {
       // System IP Address
-      const res = await fetch(`/links`, {
+      const res = await fetch(`${baseURL}/links`, {
         method: 'post',
         body: JSON.stringify({name: userData}),
       });
       console.log('insertDataApi: ', await res.json());
+      setUserData('');
       getData();
     } catch (error: any) {
       console.log('catch insertDataApi: ', error?.message);
@@ -116,15 +117,15 @@ function App(): React.JSX.Element {
   // Delete data using API
   const deleteDataApi = async (delId: string) => {
     try {
-      const res = await fetch(`${baseURL}/${delId}`, {
+      const res = await fetch(`${baseURL}/links/${delId}`, {
         method: 'delete',
         body: JSON.stringify({name: userData}),
       });
       setUserData('');
-      console.log('insertDataApi: ', await res.json());
+      console.log('deleteDataApi: ', await res.json());
       getData();
     } catch (error: any) {
-      console.log('catch insertDataApi: ', error?.message);
+      console.log('catch deleteDataApi: ', error?.message);
     }
   };
 
